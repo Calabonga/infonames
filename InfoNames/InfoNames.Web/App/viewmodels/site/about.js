@@ -1,8 +1,12 @@
-﻿define(function () {
+﻿define(['services/logger'],function (logger) {
     var
-        title = 'О проекте';
+        title = 'О проекте',
+        activate = function() {
+            logger.logSuccess('Загружена страница "О проекте"', 'about');
+        };
 
     return {
-        title: title
+        title: title,
+        activate: activate
     };
 });

@@ -1,4 +1,14 @@
 ﻿<div class="container">
     <h1 data-bind="text: title"></h1>
-    <p>Добро пожаловать в Single Page Application</p>
+    <div class="row">
+        <div data-bind="ifnot: letters().length">
+            <p>Подождите пожалуйста, загружаем алфавит...</p>
+        </div>
+        <div data-bind="if: letters().length">
+            <p>Выберите букву, с которой начинается имя, чтобы узнать толкование:</p>
+            <div data-bind="foreach: letters">
+                <div class="letter"> <a data-bind="text: $data, attr:{href:'#letter/'+$data}"></a></div>
+            </div>
+        </div>
+    </div>
 </div>

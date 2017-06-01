@@ -1,4 +1,6 @@
 ﻿<div class="container">
-    <section id="content" data-bind="router: { transition: 'entrance', cacheViews: false }"></section>
-    <section data-bind="compose: 'site/footer.html'"></section>
+    <div data-bind="blockUI: indicator">
+        <section id="content" data-bind="router: { transition: 'entrance', cacheViews: false }"></section>
+        <section data-bind="compose: 'site/footer.html'"></section>
+    </div>
 </div>

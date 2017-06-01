@@ -133,7 +133,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App\config.js" />
     <Content Include="App\main.js" />
+    <Content Include="App\services\busyIndicator.js" />
+    <Content Include="App\services\dataServices.js" />
+    <Content Include="App\services\logger.js" />
+    <Content Include="App\services\utils.js" />
     <Content Include="App\viewmodels\shell.js" />
     <Content Include="App\viewmodels\site\about.js" />
     <Content Include="App\viewmodels\site\home.js" />
@@ -169,6 +174,7 @@
     <Content Include="Content\bootstrap-theme.css.map" />
     <Content Include="Content\bootstrap.css.map" />
     <None Include="Scripts\jquery-2.1.1.intellisense.js" />
+    <Content Include="Images\ms-loader.gif" />
     <Content Include="Scripts\almond-custom.js" />
     <None Include="Scripts\breeze.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />

@@ -1,5 +1,5 @@
-﻿define(['plugins/router'],
-    function (router) {
+﻿define(['plugins/router', 'services/busyIndicator'],
+    function (router, indicator) {
         var
             activate = function () {
 
@@ -15,6 +15,7 @@
             };
 
         return {
+            indicator: indicator,
             activate: activate,
             router: router
         };

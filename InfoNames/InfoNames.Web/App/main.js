@@ -17,6 +17,36 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],
 
         app.title = 'Что значит имя';
 
+        // инициализация bindingHandlers
+        ko.bindingHandlers.blockUI = {
+            init: function (element, valueAccessor) {
+                var value = valueAccessor(),
+                    ctrl = ko.utils.unwrapObservable(value);
+                $(element).css('position', 'relative');
+                $(element).css('min-height', '70px');
+                ko.utils.domNodeDisposal.addDisposeCallback(element, function () {
+                    var el = $("#block" + ctrl.uniqueId)[0];
+                    if (el)
+                        ko.removeNode(el);
+                });
+            },
+            update: function (element, valueAccessor, allBindingAccessor) {
+                var value = valueAccessor(),
+                    ctrl = ko.utils.unwrapObservable(value);
+                var el;
+                if (ctrl.isbusy()) {
+                    if (ctrl && ctrl.template) {
+                        var block = ctrl.template(element);
+                        $(element).append(block);
+                    }
+                } else {
+                    el = $("#block" + ctrl.uniqueId)[0];
+                    if (el)
+                        ko.removeNode(el);
+                }
+            }
+        };
+
         app.configurePlugins({
             router: true,
             dialog: true
@@ -27,6 +57,6 @@ define(['durandal/system', 'durandal/app', 'durandal/viewLocator'],
         viewLocator.useConvention();
 
         app.start().then(function () {
-            app.setRoot('viewmodels/shell','entrance');
+            app.setRoot('viewmodels/shell', 'entrance');
         });
     });
