@@ -1,0 +1,25 @@
+﻿<div class="container">
+    <div class="btn-toolbar margin20">
+        <div class="btn-group">
+            <a href="#" class="btn btn-default" title="выбраать букву"><i class="fa fa-home fa-3x"></i></a>
+            <a class="btn btn-default"
+               data-bind="attr:{href:'#letter/'+ currentLetter(), title: 'назад к списку имён на букву ['+ currentLetter()+']'}">
+                <i class="fa fa-arrow-circle-left fa-3x"></i>
+            </a>
+        </div>
+    </div>
+
+<b class="text-info" data-bind="html: gender"></b>
+<h1>
+    <!-- ko foreach: letters -->
+    <a data-bind="text: $data, attr:{href:'#'}, click: $parent.showInfo"></a>
+    <!-- /ko -->
+</h1>
+
+<p class="margin20">
+    <span data-bind="html: item().Content()"></span>
+</p>
+    <p class="well ">
+        <span>Примечание: если нажать на букву имени, то можно прочитать значение буквы в имени. Если в имени содержится несколько одинаковых букв, то эффект усиливается кратно количеству одинаковых букв.</span>
+    </p>
+</div>

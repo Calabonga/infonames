@@ -1,0 +1,47 @@
+﻿<div class="container">
+    <div class="btn-toolbar margin20">
+        <div class="btn-group ">
+            <a href="#" class="btn btn-default" title="выбрать букву"><i class="fa fa-home fa-3x"></i></a>
+        </div>
+
+<div class="btn-group" data-toggle="buttons">
+    <label title="Мужские и женские"
+            class="btn btn-default"
+            data-bind="css:{active: type()==''}, click:selectType.bind('')">
+        <input type="radio" name="options">
+        <i class="fa fa-male fa-3x"></i>
+        <i class="fa fa-female fa-3x"></i>
+    </label>
+    <label title="Только мужские"
+            class="btn btn-default"
+            data-bind="css:{active: type()=='М'}, click:selectType.bind('М')">
+        <input type="radio" name="options">
+        <i class="fa fa-male fa-3x"></i>
+    </label>
+    <label title="Только женские"
+            class="btn btn-default"
+            data-bind="css:{active: type()=='Ж'}, click:selectType.bind('Ж')">
+        <input type="radio" name="options">
+        <i class="fa fa-female fa-3x"></i>
+    </label>
+</div>
+    </div>
+
+<div class="row">
+    <div data-bind="foreach: namesByLetter">
+        <div class="col-lg-3 col-sm-12 col-md-3 name">
+            <a data-bind="attr:{href:'#info/'+ Name()}">
+                <h1 data-bind="text: Name"></h1>
+            </a>
+        </div>
+    </div>
+</div>
+    <div class="col-md-12 col-lg-12">
+
+        <div class="">
+
+            Имена на букву "<b data-bind="text: currentLetter"></b>" (всего <span data-bind="text: namesByLetter().length"></span> шт.)
+
+        </div>
+    </div>
+</div>
