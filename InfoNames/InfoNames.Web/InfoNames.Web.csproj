@@ -82,8 +82,11 @@
   <ItemGroup>
     <Content Include="App\main.js" />
     <Content Include="App\viewmodels\shell.js" />
+    <Content Include="App\viewmodels\site\about.js" />
     <Content Include="App\viewmodels\site\home.js" />
     <Content Include="App\views\shell.html" />
+    <Content Include="App\views\site\about.html" />
+    <Content Include="App\views\site\footer.html" />
     <Content Include="App\views\site\home.html" />
     <Content Include="Content\app.css" />
     <Content Include="Content\bootstrap-theme.css" />

@@ -9,7 +9,7 @@
                 ];
 
                 return router.makeRelative({ moduleId: 'viewmodels' })
-                    .map(routes) 
+                    .map(routes)
                     .buildNavigationModel()
                     .activate();
             };
